@@ -1,0 +1,57 @@
+## Investor Profiler Agent 
+Agent that takes inputs from investor 
+
+
+
+------ The following information has to be obtained! ------
+
+1. Basic info
+    - Investor Name 
+    - Age 
+    - Occupation 
+    - Net Worth  
+
+2. Financial goals 
+    - Primary goal -> Priority investment plans of investor that needs to be looked first 
+    - Secondary goal -> Less prior investment plans or passive income investments, etc.
+
+3. Investment Horizon (Period) with investment plan
+    - Short Term: 1-5 years period (stocks, options, IPOs, etc)
+    - Medium Term: 5-10 years period (education funds, mfs, etc)
+    - Long Term: 10-20+ years (retirements, ppf, etc)'
+
+4. Risk Tolerance (How much risk can the investor handle?)
+    - Assessment:
+        - Low risk 
+        - Moderate risk
+        - High risk
+    - Details: A description on How Investor Can Manage and Tolerate Risk
+        example: Comfortable with moderate market fluctuations, preference for a balanced approach between growth and stability
+
+5. Investment Preferences 
+    - Asset Classes: preferences for a mix of assets or single asset 
+    - Sector Preferences: Tech, energy etc
+    - Geographic Preferences: Region for investment 
+    - Ethical Consideration (if any): avoid investment in tobacco, firearm etc 
+
+6. Historical Investment Behavior
+    - Previous investments: A description stating your previous investments
+    - Performance: a description on how your past investments performed 
+        example: Consistent returns with moderate risk, occasional re-balancing based on market conditions
+
+7. Liquidity Needs (if any)
+    - Emergency Funds: A description on Liquidity needs (if any)
+        example: $50,000 in a high-yield savings account
+    - Other needs (uf any): any other forseen expenses
+
+8. Other Relevant information (if any)
+    - Tax Consideration: any tax Consideration the investor might want to put in
+        example: Utilizes tax-advantaged accounts such as 401(k) and Roth IRA
+    - Estate Planning: has a will or an estate plan in place 
+    - Insurance: any insurance policies in Consideration
+
+
+This profile provides a comprehensive view of the investor's financial situation, goals, risk tolerance, preferences, 
+and other relevant factors, allowing the Portfolio Management Agent to tailor its recommendations effectively.
+
+

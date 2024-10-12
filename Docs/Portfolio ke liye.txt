@@ -1,0 +1,13 @@
+Portfolio ke liye? 
+
+
+Invester Profile data 
+Invester Risk data
+Invester Current Portfolio data 
+
+Market Analysis: 
+Market Data: data on various financial instruments (stocks, bonds, shares, debts, etc_). Historical performance, volatility and market conditions.
+
+Economic indicators: rates, inflation rates, GDP growth and other factors.
+
+Financial news: News 

@@ -1,0 +1,20 @@
+## Investor Profile Data 
+The directory contains data files from each section of the investor profiler. 
+
+
+Takes in:
+    - Data inputs for each section in investor profiler 
+    (name, age, risk data, current investment data, etc)
+Returns:
+    - Json file containing data for each individual investor! with an unique id 
+    - A single page pdf file containing an overall information of the investor profile 
+    - data for the purpose of Risk tolerance evaluation, financial goal analysis and current portfolio assessment using 
+        relevant information from the inputs! 
+
+
+# Folder Structure Info: 
+- input_data: This folder contains the code files to collect all inputs from the investor! 
+- pdf_agent: An agent that takes in inputs and builds a pdf file containing the investor profile! 
+- json_build: Script that takes in inputs and stores investor information as json files with unique id! 
+- investor_insights: Script that extracts data for the purpose of Risk tolerance evaluation, financial goal 
+    analysis and current portfolio assessment! 
