@@ -1,7 +1,7 @@
 # script that takes in raw strings and combine them to form json files 
 import json
 import os 
-
+from unique_id import GenerateUID
 
 
 class BuildJson: 
@@ -26,6 +26,7 @@ class BuildJson:
         """
         try:
             self.__json_data = {
+                "unique_id": GenerateUID().generate_id(),
                 "basic_info": self.__basic_info,
                 "financial_goals": self.__financial_goals,
                 "risk_tolerance": self.__risk_tolerance,
@@ -60,3 +61,19 @@ class BuildJson:
                 json.dump(self.__json_data, f, indent=4)
         except Exception as e:
             print(e)
+
+
+
+# Example Usage 
+basic_info = "Name: John Doe\nAge: 30\nOccupation: Engineer\n"
+financial_goals = "Short-term: Buy a car\nLong-term: Buy a house\n"
+risk_tolerance = "High\n"
+historical_investments = "Stocks, Bonds\n"
+investment_horizon = "5 years\n"
+investment_preferences = "Stocks\n"
+liquidity_needs = "High\n"
+other_info = "None\n"
+
+build_json = BuildJson(basic_info, financial_goals, risk_tolerance, historical_investments, investment_horizon, investment_preferences, liquidity_needs, other_info)
+build_json.build_json()
+build_json.save_json()
