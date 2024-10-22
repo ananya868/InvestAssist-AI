@@ -1,1 +1,1 @@
-# Paisa-Ai
+# InvestAssist-AI
