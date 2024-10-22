@@ -3,7 +3,6 @@ from tasks import stocks_task
 from dotenv import load_dotenv 
 load_dotenv()
 
-
 from crewai_tools import EXASearchTool
 
 # Initialize the tool for internet searching capabilities

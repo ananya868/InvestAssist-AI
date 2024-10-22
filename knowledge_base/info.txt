@@ -1,0 +1,12 @@
+This directory contains the script to build the knowledge base for the project 
+
+We use either sql based database or vector database to maintain the knowledge base 
+
+Following are the pipelines that need to be built: 
+- real time asset database pipeline
+- real time market trend database pipeline 
+- real time podcast transcription database pipeline 
+- real time validated information database pipeline 
+- overall validated information database pipeline 
+
+updated---
