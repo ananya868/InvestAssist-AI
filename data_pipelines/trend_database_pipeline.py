@@ -1,10 +1,9 @@
-# Script for data pipeline of various assets, outputs the final data as json format to the knowledge_base dir 
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod 
 from data_pipelines.chat_with_openai import ChatWithAI
-import uuid
-import datetime
-import json
-import os
+import uuid 
+import datetime 
+import json 
+import os 
 
 
 class Base(ABC):
@@ -19,30 +18,30 @@ class Base(ABC):
     @abstractmethod
     def load(self):
         pass
+ 
 
-
-class AssetETL(Base): 
-    def __init__(self, destination: str, asset_type: str):
+class TrendETL(Base):
+    def __init__(self, destination: str, trend_type: str):
         self.destination = destination
-        self.asset_type = asset_type 
+        self.trend_type = trend_type
+    
 
-
-    def extract(self, asset_data: str):
+    def extract(self, trend_data: str):
         """ 
         This method extracts data from the source, be it agents or apis
 
         Arguments
-            - asset_data: A string type, para which contain all information about the specified asset 
+            - trend_data: A string type, para which contain all information about the specified trend 
         Returns 
             - inits data for the current object instance
         """
-        if len(asset_data) < 200 or len(asset_data) > 5000:
+        if len(trend_data) < 200 or len(trend_data) > 5000: 
             raise ValueError("[failed] Data is either too short or too long")
         else:
-            self.data = asset_data
+            self.data = trend_data
             print("[done] --Data extraction success--")
 
-
+    
     def transform(self, api_key: str):
         """ 
         This method transforms data to fix inconsistency or abnormality 
@@ -74,19 +73,19 @@ class AssetETL(Base):
         data = {
             "unique_id": unique_id,
             "data": self.data,
-            "asset_type": self.asset_type,
+            "trend_type": self.trend_type,
             "date": str(datetime.datetime.now())[:19]
         }
         
         # define path
-        path = os.path.join(self.destination, f"{self.asset_type}")
+        path = os.path.join(self.destination, f"{self.trend_type}")
         # create path if not exists
         if not os.path.exists(path):
             os.makedirs(path)
             print("dir Created")
 
         # file name
-        name = f"{self.asset_type}_{str(datetime.date.today()).replace('-', '_')}_{unique_id[:8]}.json"
+        name = f"{self.trend_type}_{str(datetime.date.today()).replace('-', '_')}_{unique_id[:8]}.json"
 
         try:
             # Dump to json
@@ -96,5 +95,3 @@ class AssetETL(Base):
 
         except Exception as e: 
             print(f"[failed] {e}")
-
-        

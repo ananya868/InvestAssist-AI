@@ -29,7 +29,7 @@
 
     
 # usage
-from data_pipelines.asset_database_pipeline import AssetETL 
+from data_pipelines.trend_database_pipeline import TrendETL
 
 
 data =  """Disclaimer: The following analysis is based on the information available as of October 23, 2024. Market conditions can change rapidly, and this analysis is not financial advice. Please consult with a financial advisor before making any investment decisions.
@@ -60,7 +60,7 @@ The market remains uncertain, with investors closely monitoring economic indicat
 
 
 
-asset = AssetETL(destination='knowledge_base', asset_type='stock')
-asset.extract(asset_data=data)
+asset = TrendETL(destination='knowledge_base', trend_type='market')
+asset.extract(trend_data=data)
 asset.transform(api_key='api_key')
 asset.load()
