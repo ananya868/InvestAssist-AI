@@ -1,7 +1,7 @@
 # script that takes in raw strings and combine them to form json files 
 import json
 import os 
-from unique_id import GenerateUID
+import nanoid 
 
 
 class BuildJson: 
@@ -26,7 +26,7 @@ class BuildJson:
         """
         try:
             self.__json_data = {
-                "unique_id": GenerateUID().generate_id(),
+                "unique_id": nanoid.generate(),
                 "basic_info": self.__basic_info,
                 "financial_goals": self.__financial_goals,
                 "risk_tolerance": self.__risk_tolerance,

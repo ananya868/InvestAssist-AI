@@ -23,8 +23,7 @@ class BuildPDF:
     """
     Takes in json data and builds a pdf file
     """
-    def __init__(self, json_data, pdf_filename: str):
-        self.data = json_data
+    def __init__(self, pdf_filename: str):
         self.pdf_filename = pdf_filename 
 
 
@@ -143,7 +142,7 @@ class BuildPDF:
 
 
         # Build the PDF 
-        doc.build(elements, onFirstPage=draw_line)
+        doc.build(elements, onFirstPage=draw_line) # Saves the pdf automatically
 
         # Returns nothing 
 
