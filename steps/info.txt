@@ -1,0 +1,28 @@
+Order of steps:
+
+
+- investor_profile_step.py
+    - Input: All investor profile inputs (name, age, financial goals, etc.) 
+    - Output: 
+        - json_data: Investor profile data in JSON format
+        - current_portfolio_insight, financial_goals_insight, risk_tolerance_insight: Insights derived from the investor profile data
+    - Functions:
+        - creates json profile, creates pdf, generate insights from profile data, saves json and pdf to specified directory 
+    
+
+- asset_agent_step.py
+    - Input:  
+    
+
+- trends_agent_step.py 
+    -
+
+
+
+asset analysis ai agent 
+trends agent 
+
+
+diversification recommendation agent 
+insights gen agent 
+investment recommendation agent 

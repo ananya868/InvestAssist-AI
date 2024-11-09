@@ -1,0 +1,65 @@
+{
+    "stocks": {
+        "role": "investor",
+        "goal": "fuck around",
+        "backstory": "fucked badly "
+    },
+    "real estate": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "ppf": {
+        "role": "investor",
+        "goal": "buy a house",
+        "backstory": "bought a house"
+    },
+    "pension plans": {
+        "role": "investor",
+        "goal": "retire",
+        "backstory": "retired"
+    },
+    "mutual funds": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "exchange trades": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "derivatives": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "die" 
+    },
+    "crypto": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "commodities": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory":"made money"
+    },
+    "bonds": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "bank deposits": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "misc": {
+        "role": "investor",
+        "goal": "make money",
+        "backstory": "made money"
+    }
+}
+
+
+

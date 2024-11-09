@@ -1,0 +1,51 @@
+{
+    "stocks": {
+        "description": "fuck around",
+        "expected_output": "fuck life"
+    },
+    "real estate": {
+        "description": "buy a house",
+        "expected_output": "buy a house"
+    }, 
+    "ppf": {
+        "description": "ppf",
+        "expected_output": "ppf"
+    },
+    "pension plans": {
+        "description": "pension plans",
+        "expected_output": "pension plans"
+    },
+    "mutual funds": {
+        "description": "mutual funds",
+        "expected_output": "mutual funds"
+    },
+    "exchange trades": {
+        "description": "exchange trades",
+        "expected_output": "exchange trades"
+    },
+    "derivatives": {
+        "description": "derivatives",
+        "expected_output": "derivatives"
+    },
+    "crypto": {
+        "description": "crypto",
+        "expected_output": "crypto"
+    },
+    "commodities": {
+        "description": "commodities",
+        "expected_output": "commodities"
+    },
+    "bonds": {
+        "description": "bonds",
+        "expected_output": "bonds"
+    },
+    "bank deposits": {
+        "description": "bank deposits",
+        "expected_output": "bank deposits"
+    },
+    "misc": {
+        "description": "misc",
+        "expected_output": "misc"
+    }
+
+}
