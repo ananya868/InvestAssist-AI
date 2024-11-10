@@ -95,3 +95,5 @@ class TrendETL(Base):
 
         except Exception as e: 
             print(f"[failed] {e}")
+
+        return data 

@@ -1,0 +1,19 @@
+{
+    "market trends": {
+        "role": "user",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "news": {
+        "role": "user",
+        "goal": "make money",
+        "backstory": "made money"
+    },
+    "social media": {
+        "role": "user",
+        "goal": "make money",
+        "backstory": "made money"
+    }
+}
+
+

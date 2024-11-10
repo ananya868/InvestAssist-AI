@@ -14,9 +14,9 @@ class TaskBase(ABC):
 
 
 
-class SocialMediaTask(TaskBase): 
+class CustomTask(TaskBase): 
     """
-    This class instantiates the Social Media Task Class
+    This class instantiates the Custom Task Class
 
     Attributes: 
         description: A description of the task (Para)
@@ -29,17 +29,17 @@ class SocialMediaTask(TaskBase):
             **kwargs: A dictionary containing the other parameters that the Task object might require 
 
         returns: 
-            Social Media Task Object 
+            Custom Task Object 
     """
     def __init__(self, description, expected_output, tools, agent):
-        # Initialize the Social Media Task with the given attributes
+        # Initialize the Custom Task with the given attributes
         self.description = description
         self.expected_output = expected_output
         self.tools = tools
         self.agent = agent
 
     def build_task(self, **kwargs):
-        # Build the Social Media Task Object with the given attributes and other parameters
+        # Build the Custom Task Object with the given attributes and other parameters
         task_attributes = {
             'description': self.description,
             'expected_output': self.expected_output,
@@ -56,4 +56,4 @@ class SocialMediaTask(TaskBase):
                 **task_attributes
             )
         except:
-            return "Failed to build Social Media Task!"
+            return "Failed to build Custom Task!"

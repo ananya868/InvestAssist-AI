@@ -13,11 +13,11 @@ class AgentBase(ABC):
         pass
 
 
-# Define the News Feed Agent 
-class NewsAgent(AgentBase): 
+# Define the Custom Agent
+class CustomAgent(AgentBase): 
     """ 
-    This class instantiates the News Feed Agent Class 
-    # collects real-time news articles on financial news feed 
+    This class instantiates the Custom Agent Class 
+    # Gather Custom reports and articles from the web
 
     Attributes: 
         role: Role of the agent (One line) 
@@ -29,17 +29,17 @@ class NewsAgent(AgentBase):
             **kwargs: A dictionary containing the other parameters that the Agent object might require 
 
         returns: 
-            News Feed Agent Object
+            Custom Agent Object
     """
     def __init__(self, role, goal, backstory):
-        # Initialize the News Feed Agent with the given attributes
+        # Initialize the Custom Agent with the given attributes
         self.role = role
         self.goal = goal
         self.backstory = backstory
 
 
     def build_agent(self, **kwargs):
-        # Build the News Feed Agent Object with the given attributes and other parameters
+        # Build the Custom Agent Object with the given attributes and other parameters
         agent_attributes = {
             'role': self.role,
             'goal': self.goal,
@@ -56,4 +56,4 @@ class NewsAgent(AgentBase):
                 **agent_attributes
             )
         except: 
-            return "Failed to build News Feed Agent!"
+            return "Failed to Custom Agent!"

@@ -1,6 +1,5 @@
 Order of steps:
 
-
 - investor_profile_step.py
     - Input: All investor profile inputs (name, age, financial goals, etc.) 
     - Output: 
@@ -11,18 +10,59 @@ Order of steps:
     
 
 - asset_agent_step.py
-    - Input:  
+    - Input: List of specified assets, # ... more 
+    - Output:
+        - json_data: All asset data with their corresponding names 
     
+    - asset_data_validator.py
+        - Functions: Takes asset data, transforms it and saves it in a json file
+        - Input:
+            - destination: Directory where the assets data will be saved in json
+            - asset_type: Type of asset (stock, bond, etc.) 
+        - Output: 
+            - data: Asset data in JSON format (for 1 asset)
+            - json file saved in the specified destination
+
 
 - trends_agent_step.py 
-    -
+    - Input: List of specified trends, # ... more  
+    - Output: 
+        - json_data: All trend data with their corresponding names 
+
+    - trends_data_validator.py
+        - Functions: Takes trend data, transforms it and saves it in a json file 
+        - Input:
+            - destination: Directory where the trends data will be saved in json
+            - trend_type: Type of trend (market, economic, etc.)
+        - Output: 
+            - data: Trend data in JSON format (for 1 trend)
+            - json file saved in the specified destination
 
 
+- diversification_recommendation_agent.py
+    - Functions: Generates Recommendation 
+    - Input: 
+        - current_portfolio_insight, financial_goals_insight, risk_tolerance_insight, 
+          summarized_asset_data, summarized_trends_data 
+    - Output:
+        - recommendation: Diversification recommendation in markdown(str)
+        - saves it in markdown file in the specified 
 
-asset analysis ai agent 
-trends agent 
+- insights_gen_agent.py
+    - Functions: Generates Insights from the data collected from the previous steps 
+    - Input:
+        - current_portfolio_insight, summarized_asset_data, summarized_trends_data
+    - Output:
+        - insights: Insights in markdown(str)
+        - saves it in markdown file in the specified directory
+    
+- investment_recommendation_agent.py
+    - Functions: Generates Recommendation based on the insights
+    - Input:
+        - current_portfolio_insight, financial_goals_insight, summarized_asset_data, summarized_trends_data
+    - Output:
+        - investment_recommendation: Investment recommendation in markdown(str)
+        - saves it in markdown file in the specified directory
 
-
-diversification recommendation agent 
-insights gen agent 
-investment recommendation agent 
+- Pdf Builder 
+    - Takes in All recommendations and generates a Sexy PDF Report
