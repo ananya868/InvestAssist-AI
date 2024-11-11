@@ -14,14 +14,10 @@ Order of steps:
     - Output:
         - json_data: All asset data with their corresponding names 
     
-    - asset_data_validator.py
-        - Functions: Takes asset data, transforms it and saves it in a json file
-        - Input:
-            - destination: Directory where the assets data will be saved in json
-            - asset_type: Type of asset (stock, bond, etc.) 
-        - Output: 
-            - data: Asset data in JSON format (for 1 asset)
-            - json file saved in the specified destination
+    - save_data.py
+        - Functions: Checks and saves data, also return data as string
+        - Takes in string data 
+        - Output: returns string data (after checking), returns json_data, and saves file
 
 
 - trends_agent_step.py 
@@ -29,14 +25,10 @@ Order of steps:
     - Output: 
         - json_data: All trend data with their corresponding names 
 
-    - trends_data_validator.py
-        - Functions: Takes trend data, transforms it and saves it in a json file 
-        - Input:
-            - destination: Directory where the trends data will be saved in json
-            - trend_type: Type of trend (market, economic, etc.)
-        - Output: 
-            - data: Trend data in JSON format (for 1 trend)
-            - json file saved in the specified destination
+    - save_data.py
+        - Functions: Checks and saves data, also return data as string
+        - Takes in string data 
+        - Output: returns string data (after checking), returns json_data, and saves file
 
 
 - diversification_recommendation_agent.py

@@ -76,9 +76,16 @@ def AssetAnalysisAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo')
         # ....
         final_output[agent_name] = output
     
-    return final_output
+    return final_output # dict 
     
 
-    
+
+# Sample output 
+
+# {
+#     "stocks": "Last week stocks rose by 20%, while the cryptocurrency market gained 15%.....",
+#     "cryptocurrency": "The cryptocurrency market has been on a bullish run for the past few days....",
+#     # ..... 
+# }
 
     
