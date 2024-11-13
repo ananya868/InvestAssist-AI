@@ -1,6 +1,6 @@
-from asset_analysis_agent.agents.custom_agent import CustomAgent
-from asset_analysis_agent.tasks.custom_task import CustomTask
-from asset_analysis_agent.tools.exa_tool import EXATool
+from AI_Agents.asset_analysis_agent.agents.custom_agent import CustomAgent
+from AI_Agents.asset_analysis_agent.tasks.custom_task import CustomTask
+from AI_Agents.asset_analysis_agent.tools.exa_tool import EXATool
 
 import json 
 import os 

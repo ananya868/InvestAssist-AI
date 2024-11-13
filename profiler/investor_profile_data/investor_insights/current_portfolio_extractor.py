@@ -1,5 +1,5 @@
 # Takes in raw input data and extend it without adding information using LLM
-from chat_with_openai import ChatWithAI
+from steps.chat_with_openai import ChatWithAI
 
 
 class CurrentPortfolioAssessmentAugment:

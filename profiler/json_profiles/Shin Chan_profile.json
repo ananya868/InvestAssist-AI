@@ -1,0 +1,31 @@
+{
+    "unique_id": "e5Df1YtwiDItgEcp6rvdG",
+    "basic_info": {
+        "Name": "Shin Chan",
+        "age": 22,
+        "Occupation": "Machine learning engineer",
+        "Annual Income": "$50000",
+        "Net Worth": "$100000"
+    },
+    "financial_goals": {
+        "Primary Goal": "Financial Freedom in 10 years",
+        "Secondary Goal": "Buy a house in 5 years"
+    },
+    "risk_tolerance": {
+        "Risk Tolerance": "High Risk Tolerance with careful investment in stocks. Comfortable with moderate market fluctuations"
+    },
+    "historical_investments": {
+        "historical investment": "Diversified Portfolio with focus on real estate. Mutual fund and ETFs with low risk is also preferable"
+    },
+    "investment_horizon": {
+        "Short Term": "1-3 years",
+        "Long Term": "5-10 years"
+    },
+    "investment_preferences": {
+        "Investment Preferences": "Investment in technology stocks, real estate and mutual funds"
+    },
+    "liquidity_needs": {
+        "Emergency Funds": "$15000 in high yield savings account"
+    },
+    "other_info": ""
+}

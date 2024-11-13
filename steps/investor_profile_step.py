@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
-from profiler.investor_profile_data.input_data import *
-from profiler.investor_profile_data.investor_insights import *
 from profiler.investor_profile_data.json_build import build_json
-from profiler.investor_profile_data.pdf_agent import build_pdf
-
+from profiler.investor_profile_data.pdf_agent.build_pdf import BuildPDF
+from profiler.investor_profile_data.investor_insights.current_portfolio_extractor import CurrentPortfolioAssessmentAugment
+from profiler.investor_profile_data.investor_insights.financial_goals_extractor import FinancialGoalsAugment
+from profiler.investor_profile_data.investor_insights.risk_tolerance_extractor import RiskToleranceAugment
 
 # Define a class for Investor profile data input processing 
 class InvestorProfile:
@@ -20,6 +20,7 @@ class InvestorProfile:
         risk_tolerance: dict,
         filename: str,
         save_pdf: bool,
+        api_key: str
     ):
         self.investor_name = investor_name
         self.basic_info = basic_info
@@ -32,6 +33,7 @@ class InvestorProfile:
         self.risk_tolerance = risk_tolerance
         self.filename = filename
         self.save_pdf = save_pdf
+        self.api_key = api_key
     
     def build(self):
         """ 
@@ -45,11 +47,11 @@ class InvestorProfile:
             - risk_tolerance_insight: dict
         """
         # Current Portfolio 
-        current_portfolio_extractor = CurrentPortfolioAssessmentAugmented(self.basic_info, self.historical_investment_behavior, self.api_key)
+        current_portfolio_extractor = CurrentPortfolioAssessmentAugment(self.basic_info, self.historical_investment_behavior, self.api_key)
         current_portfolio_insight = current_portfolio_extractor.augment_data()
 
         # Financial Goals 
-        financial_goals_extractor = FinancialGoalsAugmented(self.financial_goals, self.investment_preferences, self.api_key)
+        financial_goals_extractor = FinancialGoalsAugment(self.financial_goals, self.investment_preferences, self.api_key)
         financial_goals_insight = financial_goals_extractor.augment_data()
 
         # Risk Tolerance 
@@ -70,15 +72,37 @@ class InvestorProfile:
         json_data = json_builder.build_json()
         json_builder.save_json() # saves json data
 
-        ## PDF Builder 
-        # convert json to list
-        data_list = [json_data['basic_info'], json_data['financial_goals'], json_data['risk_tolerance'], json_data['historical_investments'], json_data['investment_horizon'], json_data['investment_preferences'], json_data['liquidity_needs'], json_data['other_info']]
+        # List of Inputs for pdf
+        data_list = []
+        for key, value in json_data.items():
+            if key == 'basic_info':
+                data_list.append(f"Name: {value['Name']}\nAge: {value['Age']}\nOccupation: {value['Occupation']}\nAnnual Income: {value['Annual Income']}\nNet Worth: {value['Net Worth']}")
+            elif key == 'financial_goals':
+                data_list.append(f"Financial Goals: \nPrimary Goal: {value['Primary Goal']} \nSecondary Goal: {value['Secondary Goal']}")
+            elif key == 'risk_tolerance':
+                data_list.append(f"Risk Tolerance: \n{value['Risk Tolerance']}")
+            elif key == 'historical_investments':
+                data_list.append(f"Historical Investment Behavior: \n{value['Historical investments']}")
+            elif key == 'investment_horizon':
+                data_list.append(f"Investment Horizon: \nShort term: {value['Short Term']} and \nLong term: {value['Long Term']}")
+            elif key == 'investment_preferences':
+                data_list.append(f"Investment Preferences: \n{value['Investment Preferences']}")
+            elif key == 'liquidity_needs':
+                data_list.append(f"Liquidity Needs: \n Emergency funds: {value['Emergency Funds']}")
+            elif key == 'other_info':
+                data_list.append(f"Other Info: \n{value}")
+
+        # PDF Builder 
     
-        pdf_builder = build_pdf.BuildPdf(pdf_filename=self.filename)
+        pdf_builder = BuildPDF(pdf_filename=self.filename)
         pdf_name = f"{self.investor_name} - Investor Profile"
-        if save_pdf: 
-            pdf_builder.PDFtemplate(sentences=data_list, title_font='Times-Roman', pdf_title=pdf_name, unique_id=json_data['unique_id'], body_font='Helvetica', body_font_size=10)
+        
+        try:
+            if self.save_pdf: 
+                pdf_builder.PDFtemplate(sentences=data_list, title_font='Times-Roman', pdf_title=pdf_name, unique_id=json_data['unique_id'], body_font='Helvetica', body_font_size=10)
+            print("[info] --Pdf saved to dir successfully--")
+        except Exception as e:
+            print(f"[error] --Error saving pdf to dir-- {e}")
 
         return json_data, current_portfolio_insight, financial_goals_insight, risk_tolerance_insight
-    
 

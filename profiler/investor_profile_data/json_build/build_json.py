@@ -45,8 +45,8 @@ class BuildJson:
         """
         Returns the name of the investor
         """
-        name = self.__basic_info.split("Name:")
-        return name[1].split('\nAge')[0].replace(" ", "")
+        name = self.__basic_info.get('Name')
+        return name
     
     def save_json(self):
         """
@@ -65,15 +65,15 @@ class BuildJson:
 
 
 # Example Usage 
-basic_info = "Name: John Doe\nAge: 30\nOccupation: Engineer\n"
-financial_goals = "Short-term: Buy a car\nLong-term: Buy a house\n"
-risk_tolerance = "High\n"
-historical_investments = "Stocks, Bonds\n"
-investment_horizon = "5 years\n"
-investment_preferences = "Stocks\n"
-liquidity_needs = "High\n"
-other_info = "None\n"
+# basic_info = "Name: John Doe\nAge: 30\nOccupation: Engineer\n"
+# financial_goals = "Short-term: Buy a car\nLong-term: Buy a house\n"
+# risk_tolerance = "High\n"
+# historical_investments = "Stocks, Bonds\n"
+# investment_horizon = "5 years\n"
+# investment_preferences = "Stocks\n"
+# liquidity_needs = "High\n"
+# other_info = "None\n"
 
-build_json = BuildJson(basic_info, financial_goals, risk_tolerance, historical_investments, investment_horizon, investment_preferences, liquidity_needs, other_info)
-build_json.build_json()
-build_json.save_json()
+# build_json = BuildJson(basic_info, financial_goals, risk_tolerance, historical_investments, investment_horizon, investment_preferences, liquidity_needs, other_info)
+# build_json.build_json()
+# build_json.save_json()

@@ -150,20 +150,20 @@ class BuildPDF:
 
 
 
-# example usage 
-ex = [
-    "Name: Arnav Kumar\nAge: 25\nOccupation: Data Scientist\nAnnual Income: $120000\nNet Worth: $100,000",
-    "Financial Goals: \nPrimary Goal: Retirement Savings \nSecondary Goal: Children Education loan",
-    "Investment Horizon: \nShort term: 1-3 years and \nLong term: 4-5 years",
-    "Risk Tolerance: \nHigh Risk Tolerance with careful investment in stocks. Comfortable with moderate market fluctuations.",
-    "Investment Preferences: \nStocks: 60% Bonds: 20% Mutual Funds: 10% Real Estate: 10%, Ethical Consideration: No drug company",
-    "Historical Investment Behavior: \nDiversified Portfolio with focus on real estate. Mutual fund and ETFs with low risk is also preferable",
-    "Liquidity Needs: \n Emergency funds: $50000 in a high yield savings account", 
-    "Tax Consideration: \n Utilize tax-advantage accounts such as 401k and ROTH IRA"
-]
+# # example usage 
+# ex = [
+#     "Name: Arnav Kumar\nAge: 25\nOccupation: Data Scientist\nAnnual Income: $120000\nNet Worth: $100,000",
+#     "Financial Goals: \nPrimary Goal: Retirement Savings \nSecondary Goal: Children Education loan",
+#     "Investment Horizon: \nShort term: 1-3 years and \nLong term: 4-5 years",
+#     "Risk Tolerance: \nHigh Risk Tolerance with careful investment in stocks. Comfortable with moderate market fluctuations.",
+#     "Investment Preferences: \nStocks: 60% Bonds: 20% Mutual Funds: 10% Real Estate: 10%, Ethical Consideration: No drug company",
+#     "Historical Investment Behavior: \nDiversified Portfolio with focus on real estate. Mutual fund and ETFs with low risk is also preferable",
+#     "Liquidity Needs: \n Emergency funds: $50000 in a high yield savings account", 
+#     "Tax Consideration: \n Utilize tax-advantage accounts such as 401k and ROTH IRA"
+# ]
 
-pdf_ = BuildPDF(ex, 'profiler/pdf_profiles/example.pdf')
-pdf_.PDFtemplate(sentences=ex, title_font='Times-Roman', pdf_title=f'Arnav Kumar - Investor Profile', unique_id='9u124j002a', body_font='Helvetica', body_font_size=10)
+# pdf_ = BuildPDF(ex, 'profiler/pdf_profiles/example.pdf')
+# pdf_.PDFtemplate(sentences=ex, title_font='Times-Roman', pdf_title=f'Arnav Kumar - Investor Profile', unique_id='9u124j002a', body_font='Helvetica', body_font_size=10)
     
 
         

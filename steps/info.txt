@@ -58,3 +58,14 @@ Order of steps:
 
 - Pdf Builder 
     - Takes in All recommendations and generates a Sexy PDF Report
+
+
+
+# Flow Diag:
+
+Investor profile step       ->      Data collection step           ->      Data Summarization step      ->      Recommendation Generation step
+(Takes in all input from        (use ai agents to run agents )         Summarizes assets and trends data    Generates recommendation based on user input,
+user, returns json,              and collect information, returns       and pass it further                 financial goals, risk, preference, and summarized
+portfolio, financial goals,      assets dict, trends dict: which                                            assets and trends data, also saves the recommendations
+and risk) also saves pdf           contain all real-time data
+and json 
