@@ -1,15 +1,14 @@
 {
-    "primary_assets": [
+    "primary_assets": 
         {
             "description": "Conduct real-time research on the following assets: Stocks, Real-Estate, Mutual Funds, Bank Deposits and PPFs. Make sure that real-time data for each asset mentioned should be there in your report. Write a report based on the data collected. Your report should be between 300-500 words. Make sure to write the report clearly and concisely!",
             "expected_output": "A detailed report summarizing key findings on each of these assets, highlighting important insights. Proper subheadings might be used. Report should be 300-500 words."
         }
-    ], 
-    "secondary_assets": [
+    , 
+    "secondary_assets": 
         {
             "description": "Conduct real-time research on the following assets: Exchange Traded funds, Derivatives, crypto, commodities and bonds. Make sure that real-time data for each asset mentioned should be there in your report. Write a report based on the data collected. Your report should be between 300-500 words. Make sure to write the report clearly and concisely!",
             "expected_output": "A detailed report summarizing key findings on each of these assets, highlighting important insights. Proper subheadings might be used. Report should be 300-500 words."
         }
-    ]
 }
 

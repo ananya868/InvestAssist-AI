@@ -11,14 +11,14 @@ from crewai import Crew
 
 def real_time_assets_agent(run: str='all', llm_model: str='gpt-3.5-turbo'):
 
-    tools = [EXATool.build_tool()]
+    tools = [EXATool().build_tool()]
     params = {'tools': tools, 'LLM': llm_model}
 
     # Prompts from json 
     try:
-        with open('prompts/real_time_asset_prompts.json', 'r') as f:
+        with open('AI_Agents/prompts/real_time_asset_prompts.json', 'r') as f:
             agent_prompts = json.load(f)
-        with open('prompts/real_time_asset_task_prompts.json', 'r') as f:
+        with open('AI_Agents/prompts/real_time_asset_task_prompts.json', 'r') as f:
             task_prompts = json.load(f)
         print("[INFO] --json loaded successfully!--")
     except Exception as e:
@@ -42,7 +42,9 @@ def real_time_assets_agent(run: str='all', llm_model: str='gpt-3.5-turbo'):
         # Crew ai task
         task = CustomTask(
             description=tasks.get(agent_name).get('description'),
-            expected_output=tasks.get(agent_name).get('expected_output')
+            expected_output=tasks.get(agent_name).get('expected_output'),
+            tools=tools, 
+            agent=agent
         ).build_task()
 
         # Crew ai Crew

@@ -1,6 +1,6 @@
-from markets_trend_agent.agents.custom_agent import CustomAgent 
-from markets_trend_agent.tasks.custom_task import CustomTask 
-from markets_trend_agent.tools.exa_tool import EXATool
+from AI_Agents.markets_trend_agent.agents.custom_agent import CustomAgent 
+from AI_Agents.markets_trend_agent.tasks.custom_task import CustomTask 
+from AI_Agents.markets_trend_agent.tools.exa_tool import EXATool
 from crewai import Crew
 
 import json
@@ -21,14 +21,14 @@ def MarketTrendsAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo'):
     Returns:
         final_output (dict): A dictionary containing the final output from the agents in a dictionary format. 
     """  
-    tools = [EXATool.build_tool()]
+    tools = [EXATool().build_tool()]
     params = {'tools': tools, 'LLM': llm_model}
 
     # prompts from json
     try:
-        with open('prompts/market_agent_prompts.json') as f:
+        with open('AI_Agents/prompts/market_agent_prompts.json') as f:
             agent_prompts = json.load(f)
-        with open('prompts/market_task_prompts.json') as f:
+        with open('AI_Agents/prompts/market_task_prompts.json') as f:
             task_prompts = json.load(f)
         print("[INFO] --json loaded successfully!--")
     except Exception as e:

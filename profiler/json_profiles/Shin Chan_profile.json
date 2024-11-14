@@ -1,8 +1,8 @@
 {
-    "unique_id": "e5Df1YtwiDItgEcp6rvdG",
+    "unique_id": "isBlZniCGjvYmbNQA75Ht",
     "basic_info": {
         "Name": "Shin Chan",
-        "age": 22,
+        "Age": 22,
         "Occupation": "Machine learning engineer",
         "Annual Income": "$50000",
         "Net Worth": "$100000"
@@ -15,7 +15,7 @@
         "Risk Tolerance": "High Risk Tolerance with careful investment in stocks. Comfortable with moderate market fluctuations"
     },
     "historical_investments": {
-        "historical investment": "Diversified Portfolio with focus on real estate. Mutual fund and ETFs with low risk is also preferable"
+        "Historical investments": "Diversified Portfolio with focus on real estate. Mutual fund and ETFs with low risk is also preferable"
     },
     "investment_horizon": {
         "Short Term": "1-3 years",

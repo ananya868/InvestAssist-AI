@@ -1,7 +1,7 @@
 from AI_Agents.real_time_assets_call import real_time_assets_agent
 from AI_Agents.trends_agent_call import MarketTrendsAgent
 from steps.save_data import SaveData
-
+import os 
 
 
 def real_time_data_collection_step(run: str='all', llm_model='gpt-3.5-turbo'):
@@ -29,7 +29,7 @@ def real_time_data_collection_step(run: str='all', llm_model='gpt-3.5-turbo'):
     try:
         for asset_name, asset_data in assets_dict.items():
             saver = SaveData(destination=save_path, data_field=asset_name)
-            dt_01 = saver.check(asset_data)
+            dt_01 = saver.check(asset_data.raw)
             asset_data_dict = saver.save()
         print("[info] --Asset Data saved successfully!--")
     except Exception as e:
@@ -38,7 +38,7 @@ def real_time_data_collection_step(run: str='all', llm_model='gpt-3.5-turbo'):
     try:
         for trend_name, trend_data in trends_dict.items():
             saver = SaveData(destination=save_path, data_field=trend_name)
-            dt_02 = saver.check(trend_data)
+            dt_02 = saver.check(trend_data.raw)
             trend_data_dict = saver.save()
         print("[info] --Trend Data saved successfully!--")
     except Exception as e:

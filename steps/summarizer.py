@@ -1,5 +1,5 @@
 import os 
-from chat_with_ai import ChatWithAI
+from steps.chat_with_openai import ChatWithAI
 
 
 
@@ -17,7 +17,7 @@ class Summarizer:
         """ 
         # Summarize each text in the list to the sent limit without losing important information 
         summarized_text_list = []
-        for text in text_list:
+        for text in self.text_list:
             # Initialize the ChatWithAI class
             prompt = f"""
             Summarize the following text to {self.sent_limit} words without losing much information. 
@@ -26,7 +26,7 @@ class Summarizer:
 
             text: {text}
             """
-            chat_with_ai = ChatWithAI(prompt=prompt, api_key=api_key)
+            chat_with_ai = ChatWithAI(prompt=prompt, api_key=self.api_key)
             # Get the response from the LLM
             response = chat_with_ai.get_response_from_llm()
             summarized_text_list.append(response)

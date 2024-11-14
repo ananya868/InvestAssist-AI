@@ -1,4 +1,4 @@
-from summarizer import Summarizer
+from steps.summarizer import Summarizer
 
 
 
