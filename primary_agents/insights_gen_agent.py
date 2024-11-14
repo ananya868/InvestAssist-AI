@@ -1,4 +1,8 @@
 # Script to define the insights generator agent whose role is to generate insights on market data based on investor's preference
+from steps.chat_with_openai import ChatWithAI 
+import os 
+import datetime
+
 
 
 class InsightGeneratorAgent:

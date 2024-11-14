@@ -1,6 +1,10 @@
 # Script to define investment recommendation agent 
 # - recommends investment by analyzing the assets and market trend data, real time 
 # - uses LLM model to generate tailored investment recommendations
+from steps.chat_with_openai import ChatWithAI 
+import os 
+import datetime
+
 
 
 class InvestmentRecommenderAgent:

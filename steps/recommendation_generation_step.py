@@ -50,7 +50,7 @@ def recommendation_generation_step(
             # Save the recommendation
             diversify_agent.save(diversification_recommendation)
 
-        if agent == 'InsightGen':
+        if agent == 'InsightsGen':
             insights_agent = InsightGeneratorAgent(
                 current_portfolio=portfolio_data,
                 summarized_asset_data=asset_data,

@@ -1,6 +1,6 @@
 # script to generate tailored portfolio diversification recommendations based on user's investment portfolio and market data 
 # Lets call it Diversify agent 
-from chat_with_openai import ChatWithAI 
+from steps.chat_with_openai import ChatWithAI 
 import os 
 import datetime
 
