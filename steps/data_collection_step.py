@@ -1,4 +1,5 @@
 from AI_Agents.assets_agent_call import AssetAnalysisAgent
+from AI_Agents.trends_agent_call import MarketTrendsAgent
 from steps.save_data import SaveData
 
 
@@ -16,7 +17,7 @@ def data_collection_step(asset_agent_list: list=['all'], trends_agent_list: list
         print(f"[error] --Asset Agents failed!-- {e}")
     
     try: 
-        trends_dict = TrendAnalysisAgent(agent_list=trends_agent_list, llm_model=llm_model)
+        trends_dict = MarketTrendsAgent(agent_list=trends_agent_list, llm_model=llm_model)
         print("[info] --Trend Agents ran successfully!--")
     except Exception as e:
         print(f"[error] --Trend Agents failed!-- {e}")

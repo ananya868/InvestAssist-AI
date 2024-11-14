@@ -1,15 +1,15 @@
 {
     "market trends": {
-        "description": "beb",
-        "expected_output": "beb"
+        "description": "Conduct real-time research on market trends by going through various financial websites. Make sure to write a well defined report between 300-500 words in a clear and concise way",
+        "expected_output": "A detailed report summarizing key findings on market trends, highlighting important insights. Proper subheadings might be used. Report should be 300-500 words"
     },
     "news": {
-        "description": "beb",
-        "expected_output": "beb"
+        "description": "Conduct real-time research on news by going through various financial websites. Find different news on investment companies, assets, deposits, etc. Make sure to write a well defined report between 300-500 words in a clear and concise way",
+        "expected_output": "A detailed report summarizing key findings on news, highlighting important insights. Proper subheadings might be used. Report should be formatted between 300-500 words"
     },
     "social media": {
-        "description": "beb",
-        "expected_output": "beb"
+        "description": "Conduct real-time research on social media by going through various social media websites. Find different sentiments on investment companies, assets, deposits, etc. Make sure to write a well defined report between 300-500 words in a clear and concise way",
+        "expected_output": "A detailed report summarizing key findings on social media sentiments, highlighting important insights. Proper subheadings might be used. Report should be formatted between 300-500 words"
     }
 }
 

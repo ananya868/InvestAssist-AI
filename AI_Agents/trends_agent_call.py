@@ -6,11 +6,12 @@ from crewai import Crew
 import json
 import os
 
+
 # Market trends agent, news agent, social media agent 
 
 
 
-def MarketsTrendAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo'):
+def MarketTrendsAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo'):
     """
     This function runs the Market Trends AI agent to generate real-time market trends data from the internet!
     It runs crew ai agents taking certain prompts, you might tune these prompts according to your needs.
@@ -74,5 +75,5 @@ def MarketsTrendAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo'):
         # ... 
         final_output[agent_name] = output
 
-    return final_output
+    return final_output # dict
     
