@@ -20,9 +20,9 @@ def real_time_assets_agent(run: str='all', llm_model: str='gpt-3.5-turbo'):
             agent_prompts = json.load(f)
         with open('AI_Agents/prompts/real_time_asset_task_prompts.json', 'r') as f:
             task_prompts = json.load(f)
-        print("[INFO] --json loaded successfully!--")
+        print("    [info] real-time prompts loaded successfully!")
     except Exception as e:
-        print(f"[ERROR] --json loading failed!-- {e}")
+        print(f"    [error] real-time prompts loading failed!: {e}")
     
 
     if run == 'all': 
@@ -50,9 +50,9 @@ def real_time_assets_agent(run: str='all', llm_model: str='gpt-3.5-turbo'):
         # Crew ai Crew
         try:
             crew = Crew(agents=[agent], tasks=[task])
-            print(f"[INFO] --{agent_name} agent created successfully!--")
+            print(f"    [info] {agent_name} agent created successfully!")
         except Exception as e:
-            print(f"[ERROR] --{agent_name} agent creation failed!-- {e}")
+            print(f"    [error] {agent_name} agent creation failed!: {e}")
         
         # Run the crew
         output = crew.kickoff()

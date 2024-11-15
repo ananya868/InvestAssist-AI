@@ -1,0 +1,21 @@
+Details on prompts files-
+
+# About prompts 
+The prompts written in the files are very generic and irrespective of geographic location, type of assets, etc. 
+More more specified search using the Ai Agents, please update the prompts to your specified use case and preferences.
+
+
+There are mainly three categories of prompts files as of now, 
+
+1. asset_agent_prompts.json and asset_task_prompts.json:
+    - These are prompts for Ai Agents to collect data from the internet in a scheduled time. 
+    - It uses more than 10 agents to collect data and require high LLM usage, need to be used carefully to prevent unwanted costs 
+
+2. market_agent_prompts.json and market_tasks_prompts.json:
+    - These are prompts for Ai Agents to collect real time data for real-time usage, also be used for scheduled time collection 
+    - Primarily uses 3 agents
+
+3. real_time_asset_prompts.jso and real_time_asset_tasks_prompts.json:
+    - Prompts for Ai Agents to collect data in real-time 
+    - Uses 2 agents at a time 
+

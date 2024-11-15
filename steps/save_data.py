@@ -31,7 +31,7 @@ class SaveData(Base):
         Returns 
             - inits data for the current object instance
         """
-        if len(data) < 200 or len(data) > 1000:
+        if len(data.split()) < 200 or len(data.split()) > 1000:
             raise ValueError("[failed] Data is either too short or too long")
         else:
             self.data = data
@@ -63,11 +63,11 @@ class SaveData(Base):
         try:
             # Dump to json
             with open(os.path.join(path, name), 'w') as f:
-                json.dump(data, f, indent=4)
+                json.dump(json_data, f, indent=4)
                 # print("[done] --Data Saved Successfully--")
 
         except Exception as e: 
-            print(f"[failed] {e}")
+            print(f"    [failed] {e}")
 
         return json_data
         

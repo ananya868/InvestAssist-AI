@@ -1,6 +1,6 @@
 import os 
 from steps.chat_with_openai import ChatWithAI
-
+from steps.chat_with_gemini import ChatWithGemini
 
 
 class Summarizer:

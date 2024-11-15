@@ -30,9 +30,9 @@ def MarketTrendsAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo'):
             agent_prompts = json.load(f)
         with open('AI_Agents/prompts/market_task_prompts.json') as f:
             task_prompts = json.load(f)
-        print("[INFO] --json loaded successfully!--")
+        print("    [info] trends prompts loaded successfully!")
     except Exception as e:
-        print(f"[ERROR] --json loading failed!-- {e}")
+        print(f"    [error] trends prompts loading failed!: {e}")
     
     # check if agent_list is empty using assert
     assert len(agent_list) > 0, 'Please provide a list of assets to analyze!.'
@@ -66,9 +66,9 @@ def MarketTrendsAgent(agent_list: list=['all'], llm_model: str='gpt-3.5-turbo'):
         # Crew ai Crew
         try:
             crew = Crew(agents=[agent], tasks=[task])
-            print(f"[INFO] --{agent_name} agent created successfully!--")
+            print(f"    [info] {agent_name} agent created successfully!")
         except Exception as e:
-            print(f"[ERROR] --{agent_name} agent creation failed!-- {e}")
+            print(f"    [error] {agent_name} agent creation failed!: {e}")
         
         # Run the crew
         output = crew.kickoff() # pass inputs if req
