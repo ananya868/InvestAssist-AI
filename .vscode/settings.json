@@ -4,6 +4,11 @@
         "pagesizes",
         "pdfbase",
         "pdfmetrics",
-        "ttfonts"
+        "serted",
+        "shortuuid",
+        "ttfonts",
+        "updation",
+        "Upsert",
+        "Upserted"
     ]
 }

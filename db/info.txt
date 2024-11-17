@@ -1,0 +1,7 @@
+Features in vector db:
+
+
+- Upsert incoming data into the vector database
+- query the vector database 
+- get scores for the matches 
+- real time data updation to vector database 
