@@ -1,7 +1,10 @@
-Features in vector db:
-
+Vector db steps: 
+Ai-agents generate new_data -> automatically upserted to vector database -> Query from this database using RAG 
 
 - Upsert incoming data into the vector database
 - query the vector database 
 - get scores for the matches 
 - real time data updation to vector database 
+
+
+

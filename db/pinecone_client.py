@@ -19,6 +19,21 @@ def create_index(index_name, dimension, metric):
     return pc 
 
 
+
+def generate_embedding(text_list: list[dict]):
+    # Initialize a Pinecone client with your API key
+    pc = Pinecone(api_key=os.environ.get('PINECONE_API_KEY'))
+
+    # Convert the text into numerical vectors that Pinecone can index
+    embeddings = pc.inference.embed(
+        model="multilingual-e5-large",
+        inputs=[d['text'] for d in text_list],
+        parameters={"input_type": "passage", "truncate": "END"}
+    )
+    return embeddings.data # list[dict] of embeddings
+
+
+
 def upsert_data(index_name: str, meta_data: list, embeddings: list):
     """Initialized a pinecone client that can be used to upsert data""" 
     pc = Pinecone(api_key=os.environ.get('PINECONE_API_KEY'))
@@ -39,7 +54,7 @@ def upsert_data(index_name: str, meta_data: list, embeddings: list):
 
     # make our records to upsert 
     records = []
-    for metadata, embedding in zip(meta_data_dict, embeddings):
+    for metadata, embedding in zip(meta_data, embeddings):
         records.append(
             {   
                 'id': shortuuid.uuid(), # unique id for each record
@@ -50,9 +65,6 @@ def upsert_data(index_name: str, meta_data: list, embeddings: list):
                     },
             }
         )
-    # print("Records created")
-
-
     # upsert the records into the index 
     try:
         index = pc.Index(index_name)

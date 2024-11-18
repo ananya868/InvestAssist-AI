@@ -16,16 +16,3 @@ def separate_fields(data_dict: dict):
 
     return text_list
 
-
-def generate_embedding(text_list: list[dict]):
-    # Initialize a Pinecone client with your API key
-    pc = Pinecone(api_key=os.environ.get('PINECONE_API_KEY'))
-
-    # Convert the text into numerical vectors that Pinecone can index
-    embeddings = pc.inference.embed(
-        model="multilingual-e5-large",
-        inputs=[d['text'] for d in text_list],
-        parameters={"input_type": "passage", "truncate": "END"}
-    )
-
-    return embeddings.data # list[dict] of embeddings

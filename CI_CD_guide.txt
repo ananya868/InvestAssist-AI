@@ -1,0 +1,9 @@
+Github Actions steps:
+
+
+
+- Runs the AI agents to collect data from internet on various financial instruments 
+
+- Update the data into the pinecone vector database 
+
+
